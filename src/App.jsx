@@ -1,14 +1,17 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 import Navbar from './assets/Components/Navbar'
+import TodoInput from './assets/Components/TodoInput'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [listTodo, setListTodo]= useState([]);
+  let addList = (inputText)=>{
+    setListTodo([...listTodo,inputText]);
+  } 
   return (
-    <div>
+    <div className='bg-[#1D1D1D] h-fit min-h-screen'>
       <Navbar />
+      <TodoInput addList={addList}/>
     </div>
   )
 }
